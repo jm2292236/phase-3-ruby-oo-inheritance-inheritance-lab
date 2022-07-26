@@ -17,4 +17,27 @@ some_knowledge = avi.teach
 
 steve.learn(some_knowledge)
 
-puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+# puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+
+jim = User.new
+jim.first_name = "Jim"
+jim.last_name = "Martin"
+some_knowledge = avi.teach 
+# jim.learn(some_knowledge) #Method undefined because jim is an instance of User and #learn is defined in Student
+
+# More knowledge for Steve
+some_knowledge = avi.teach 
+steve.learn(some_knowledge)
+
+erika = Student.new
+erika.first_name = "Erika"
+erika.last_name = "Gates"
+erika.learn(avi.teach)
+erika.learn(avi.teach)
+erika.learn(avi.teach)
+
+puts "This is what Steve has learned so far:"
+steve.knowledge.each_with_index {|item, index| puts "\t#{index+1}. #{item}"}
+
+puts "\nErika also has learned this:"
+erika.knowledge.each_with_index {|item, index| puts "\t#{index+1}. #{item}"}
